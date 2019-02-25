@@ -1,0 +1,18 @@
+package org.news.admin.context;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+
+@Configuration
+@EnableTransactionManagement
+public class ContextDatasource {
+	
+	@Bean
+	public EntityManager entityManager(EntityManagerFactory emf) {
+		return emf.createEntityManager();
+	}
+}
